@@ -1,10 +1,13 @@
 package com.enigma.tokonyadia.controller;
 
 import com.enigma.tokonyadia.entity.Store;
+import com.enigma.tokonyadia.model.response.StoreResponse;
 import com.enigma.tokonyadia.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -56,6 +59,12 @@ public class StoreController {
     )
     public void deleteStore(@PathVariable String id){
         storeService.delete(id);
+    }
+
+    @GetMapping("/dto")
+    public ResponseEntity <List<StoreResponse>> getAllStoreResponse(){
+        List<StoreResponse> storeResponses = storeService.getAllResponse();
+        return new ResponseEntity<>(storeResponses, HttpStatus.OK);
     }
 
 }
