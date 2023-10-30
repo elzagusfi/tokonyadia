@@ -5,6 +5,8 @@ import com.enigma.tokonyadia.entity.ProductPrice;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface ProductPriceRepository extends JpaRepository<ProductPrice, String> {
     //kondisi dimana kita harus pilih dulu price yang aktif atau tidak

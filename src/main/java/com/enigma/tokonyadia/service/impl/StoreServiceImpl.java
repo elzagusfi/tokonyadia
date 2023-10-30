@@ -61,5 +61,7 @@ public class StoreServiceImpl implements StoreService {
                     .build();
             responses.add(response);
         }
+
+        return responses;
     }
 }
