@@ -7,7 +7,9 @@ import com.enigma.tokonyadia.model.request.ProductRequest;
 import com.enigma.tokonyadia.model.response.ProductResponse;
 import com.enigma.tokonyadia.model.response.StoreResponse;
 import com.enigma.tokonyadia.repository.ProductRepository;
+import com.enigma.tokonyadia.service.ProductPriceService;
 import com.enigma.tokonyadia.service.ProductService;
+import com.enigma.tokonyadia.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -71,7 +73,7 @@ public class ProductServiceImpl implements ProductService {
                 .isActive(true)
                 .build();
         productPriceService.create(productPrice);
-        return ProductResponse.builder();
+        return ProductResponse.builder()
                 .id(product.getId())
                 .productName(product.getName())
                 .description(product.getDescription())

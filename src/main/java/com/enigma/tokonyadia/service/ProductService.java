@@ -18,5 +18,5 @@ public interface ProductService {
 
     void delete(String id);
 
-    ProductResponse createProduct(ProductRequest)
+    ProductResponse createProduct(ProductRequest productRequest);
 }
